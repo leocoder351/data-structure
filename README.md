@@ -4,9 +4,9 @@ This is a repo for data structure practice.
 ### done
 #### 01 - 数组
 #### 02 - 栈
+#### 03 - 队列
 
 ### todo
-- 队列 
 - 链表
 - 集合
 - 字典和散列表

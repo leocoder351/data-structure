@@ -1,5 +1,5 @@
-// 优先队列PriorityQueue类
-function PriorityQueue () {
+// 最大优先队列MaxPriorityQueue类
+function MaxPriorityQueue () {
   this.items = [];
 
   this.enqueue = enqueue;
@@ -24,7 +24,7 @@ function enqueue (element, priority) {
     var added = false;
 
     for (var i = 0; i < this.items.length; i++) {
-      if (queueElement.priority < this.items[i].priority) {
+      if (queueElement.priority > this.items[i].priority) {
         this.items.splice(i, 0, queueElement);
         added = true;
         break ;
@@ -77,19 +77,19 @@ function print () {
 /*----------------------------------------------*/
 
 
-// 创建优先队列priorityQueue实例
-var priorityQueue = new PriorityQueue();
+// 创建最大优先队列maxPriorityQueue实例
+var maxPriorityQueue = new MaxPriorityQueue();
 
-console.log(priorityQueue.isEmpty());     // true
-priorityQueue.enqueue("John", 1);         // undefined
-priorityQueue.enqueue("Jack", 3);         // undefined
-priorityQueue.enqueue("Camila", 2);       // undefined
-priorityQueue.enqueue("Tom", 3);          // undefined
-priorityQueue.print();                    // "John->1,Camila->2,Jack->3,Tom->3"
-console.log(priorityQueue.size());        // 4
-console.log(priorityQueue.isEmpty());     // false
-priorityQueue.dequeue();                  // {element: "John", priority: 1}
-priorityQueue.dequeue();                  // {element: "Camila", priority: 2}
-priorityQueue.print();                    // "Jack->3,Tom->3"
-priorityQueue.clear();                    // undefined
-console.log(priorityQueue.size());        // 0
+console.log(maxPriorityQueue.isEmpty());     // true
+maxPriorityQueue.enqueue("John", 1);         // undefined
+maxPriorityQueue.enqueue("Jack", 3);         // undefined
+maxPriorityQueue.enqueue("Camila", 2);       // undefined
+maxPriorityQueue.enqueue("Tom", 3);          // undefined
+maxPriorityQueue.print();                    // "Jack->3,Tom->3,Camila->2,John->1"
+console.log(maxPriorityQueue.size());        // 4
+console.log(maxPriorityQueue.isEmpty());     // false
+maxPriorityQueue.dequeue();                  // {element: "Jack", priority: 3}
+maxPriorityQueue.dequeue();                  // {element: "Tom", priority: 3}
+maxPriorityQueue.print();                    // "Camila->2,John->1"
+maxPriorityQueue.clear();                    // undefined
+console.log(maxPriorityQueue.size());        // 0
