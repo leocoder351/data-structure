@@ -15,7 +15,7 @@ function ArrayList() {
     return array.join();
   };
 
-  // 冒泡排序 - 复杂度 O(n²)
+  // 冒泡排序 - 复杂度 O(n²) - 稳定
   this.bubbleSort = function () {
     var length = array.length;
 
@@ -43,7 +43,7 @@ function ArrayList() {
     }
   };
 
-  // 选择排序 - 复杂度 O(n²)
+  // 选择排序 - 复杂度 O(n²) - 不稳定
   this.selectionSort = function () {
     var length = array.length;
     var minIndex;
@@ -65,7 +65,7 @@ function ArrayList() {
     }
   };
 
-  // 插入排序 - 复杂度 O(n²)
+  // 插入排序 - 复杂度 O(n²) - 稳定
   this.insertSort = function () {
     var length = array.length;
 
@@ -125,7 +125,7 @@ function ArrayList() {
     array = mergeSoftRec(array);
   };
 
-  // 快速排序 - 复杂度 O(nlogn)
+  // 快速排序 - 复杂度 O(nlogn) - 不稳定
   this.quickSort = function () {
     var quick = function (array, left, right) {
       var index;

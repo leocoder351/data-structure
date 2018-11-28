@@ -83,8 +83,7 @@ function BinarySearchTree () {
 
       var parentNode = root;
 
-      while (stack.length !== 0) {
-
+      while (parentNode !== null || stack.length !== 0) {
         if (parentNode) {
           // 先遍历左子树
           callback(parentNode.key);
@@ -110,8 +109,7 @@ function BinarySearchTree () {
 
       var parentNode = root;
 
-      while (stack.length !== 0) {
-
+      while (parentNode !== null || stack.length !== 0) {
         if (parentNode) {
           // 先遍历左子树
           stack.push(parentNode);
@@ -356,11 +354,23 @@ tree.preOrderTraverse(function (value) {
   console.log(value);
 });
 
+console.warn('非递归前序遍历');
+tree.preOrderTraverseNoRecur(function (value) {
+  console.log(value);
+});
+
 // 深度优先遍历之中序遍历
 console.warn('中序遍历');
 tree.inOrderTraverse(function (value) {
   console.log(value);
 });
+
+console.warn('非递归中序遍历');
+tree.inOrderTraverseNoRecur(function (value) {
+  console.log(value);
+});
+
+
 
 // 深度优先遍历之后序遍历
 console.warn('后序遍历');
